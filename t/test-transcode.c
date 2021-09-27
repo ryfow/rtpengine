@@ -946,7 +946,7 @@ int main(void) {
 	packet_seq(A, 8, PCMA_payload, 1000960, 206, 8, PCMA_payload);
 	packet_seq(A, 8, PCMA_payload, 1001120, 207, 8, PCMA_payload);
 	// enable blocking
-	call.block_dtmf = 1;
+	call.block_dtmf = BLOCK_DTMF_DROP;
 	// start with marker
 	packet_seq_exp(A, 101 | 0x80, "\x05\x0a\x00\xa0", 1001280, 208, -1, "", 0);
 	dtmf("");
@@ -1011,7 +1011,7 @@ int main(void) {
 	packet_seq(A, 8, PCMA_payload, 1000960, 206, 0, PCMU_payload);
 	packet_seq(A, 8, PCMA_payload, 1001120, 207, 0, PCMU_payload);
 	// enable blocking
-	call.block_dtmf = 1;
+	call.block_dtmf = BLOCK_DTMF_DROP;
 	// start with marker
 	packet_seq_exp(A, 101 | 0x80, "\x05\x0a\x00\xa0", 1001280, 208, -1, "", 0);
 	dtmf("");
@@ -1075,7 +1075,7 @@ int main(void) {
 	packet_seq(A, 0, PCMU_payload, 1000960, 206, 0, PCMU_payload);
 	packet_seq(A, 0, PCMU_payload, 1001120, 207, 0, PCMU_payload);
 	// enable blocking
-	call.block_dtmf = 1;
+	call.block_dtmf = BLOCK_DTMF_DROP;
 	// start with marker
 	packet_seq_exp(A, 101 | 0x80, "\x05\x0a\x00\xa0", 1001280, 208, -1, "", 0);
 	dtmf("");
